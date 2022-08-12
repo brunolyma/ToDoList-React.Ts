@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { useState } from "react";
 import { Item } from "../types/item";
 
 type Props = {
