@@ -9,5 +9,5 @@
 }
 
 body {
-  @apply bg-[#17181F];
+  @apply bg-[#17181F] font-Roboto;
 }
