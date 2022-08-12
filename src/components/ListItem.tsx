@@ -4,22 +4,21 @@ import { Item } from "../types/item";
 
 type Props = {
   item: Item;
+  onChange: (id: number, done: boolean) => void;
 };
 
-export function ListItem({ item }: Props) {
-  const [isChecked, setIsChecked] = useState(item.done);
-
+export function ListItem({ item, onChange }: Props) {
   return (
     <div className=" flex items-center p-3 my-3 bg-[#20212C] rounded-xl">
       <input
         className=" w-6 h-6 mr-3"
         type="checkbox"
-        checked={isChecked}
-        onChange={(e) => setIsChecked(e.target.checked)}
+        checked={item.done}
+        onChange={(e) => onChange(item.id, e.target.checked)}
       />
       <label
         className={classNames(" text-gray-200", {
-          "line-through": isChecked,
+          "line-through": item.done,
         })}
       >
         {item.task}

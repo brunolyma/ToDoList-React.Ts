@@ -7,6 +7,7 @@ type Props = {
 export function AddArea({ onEnter }: Props) {
   const [inputText, setInputText] = useState("");
 
+  // função que ao clicar em enter manda o texto como parametro para função no componente pai
   function handleKeyUp(e: KeyboardEvent) {
     if (e.code === "Enter" && inputText) {
       onEnter(inputText);
